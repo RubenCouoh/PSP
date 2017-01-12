@@ -11,6 +11,16 @@
 		this.tail = null;
 	}
 	
+	begin () {
+		let first = this.head;
+		return first;
+	}
+	
+	end () {
+		let last = this.tail;
+		return last;
+	}
+	
 	get isEmpty() 
 	{
 		return this.head === null;
@@ -33,15 +43,16 @@
 	{
 		let value = null;
 		if (!this.isEmpty) {
-			let firstNode = this.head;			
-			value = firstNode.value;
+			let newFirst = this.head.next;			
+			value = this.head.value;
 			
 			if (this.head === this.tail) {
+				delete this.head;
 				this.head = this.tail = null;
 			} else {
-				this.head = this.head.next;
+				delete this.head;
+				this.head = this.newFirst;
 			}
-			delete firstNode;
 		}		
 		return value;
 	}
@@ -56,21 +67,21 @@
 		return value;
 	}
 	
-	toArray() 
+	
+	get size()
 	{
-		let values = [];
+		let count = 0;
 		if (!this.isEmpty) {
 			let tmp = this.head;
 			
 			while (tmp !== null) {
-				value.push(tmp.value);
+				count++;
 				tmp = tmp.next;
 			}
 		}
 		
-		return values;
-	}
-	
+		return count;
+	}	
  }
  
  module.exports = List;
