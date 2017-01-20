@@ -1,10 +1,13 @@
-/**
- *	Rubén Ignacio Couoh Ku.
- **/
+/************************************************************************/
+/*	Name:        Rubén ignacio Couoh Ku.								*/
+/*	Date:        11/01/2017												*/
+/*	Description: Lista ligada simple.   								*/
+/************************************************************************/
 
  var Node = require('./Node.js');
  
  class List {
+	 
 	constructor() 
 	{
 		this.head = null;

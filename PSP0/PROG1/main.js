@@ -1,6 +1,8 @@
-/**
- *	Rubén Ignacio Couoh Ku.
- **/
+/************************************************************************/
+/*	Name:        Rubén ignacio Couoh Ku.								*/
+/*	Date:        11/01/2017												*/
+/*	Description: Calcula la media y la desviación standar				*/
+/************************************************************************/
  
 const readline = require('readline');
 const fs = require('fs');
@@ -79,10 +81,10 @@ function onValues(err, values)
 		list.push(value);
 	}	
 	
-	let mean = RMath.avg(list);
-	let stdDev = RMath.stdDev(list);
+	let mean = RMath.toAverage(list);
+	let standardDeviation = RMath.computeStandardDeviation(list);
 	
 	console.log('');
 	console.log(`  Mean: ${mean.toFixed(2)}`);
-	console.log(`  Standard Deviation: ${stdDev.toFixed(2)}`);
+	console.log(`  Standard Deviation: ${standardDeviation.toFixed(2)}`);
 }

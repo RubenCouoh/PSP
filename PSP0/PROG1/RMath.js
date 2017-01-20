@@ -1,15 +1,20 @@
-/**
-*	Rubén Ignacio Couoh Ku.
-**/
+/************************************************************************/
+/*	Name:        Rubén ignacio Couoh Ku.								*/
+/*	Date:        12/01/2017												*/
+/*	Description: Calcula la media y la desviación standar de una lista  */
+/************************************************************************/
 
 class RMath {
-	constructor() {	}
 	
-	static avg (list)
+	constructor() 
+	{
+	}
+	
+	static toAverage(list)
 	{		
-		let node = list.begin(),
-			mean = 0,
-			sum = 0;
+		let node = list.begin();
+		let	mean = 0;
+		let	sum  = 0;
 			
 		if (!list.isEmpty) {
 			while ( node !== null) {
@@ -21,22 +26,21 @@ class RMath {
 		return mean;
 	}
 	
-	static stdDev(list)
+	static computeStandardDeviation(list)
 	{
-		let mean = RMath.avg(list);
-		let node = list.begin(),
-			sum = 0,
-			n = list.size,
-			dev = 0;
+		let mean = RMath.toAverage(list);
+		let node = list.begin();
+		let	sum  = 0;
+		let	dev  = 0;
 			
 		if (!list.isEmpty) {
-			while ( node !== null) {
+			while (node !== null) {
 				let xi = node.value;
-				sum += Math.pow(xi - mean, 2);
+				sum += Math.pow(xi-mean, 2);
 				node = node.next;
 			}
 			
-			dev = Math.sqrt(sum/(n-1));
+			dev = Math.sqrt(sum/(list.size-1));
 		}
 		
 		return dev;
@@ -44,4 +48,3 @@ class RMath {
 }
 
 module.exports = RMath;
-
