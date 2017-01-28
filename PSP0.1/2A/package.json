@@ -1,0 +1,14 @@
+{
+  "name": "prog2",
+  "version": "1.0.0",
+  "description": "Contador de líneas de código.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rubén Couoh",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.1.1"
+  }
+}
