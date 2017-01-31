@@ -14,12 +14,14 @@
 		this.tail = null;
 	}
 	
-	begin () {
+	begin () 
+	{
 		let first = this.head;
 		return first;
 	}
 	
-	end () {
+	end () 
+	{
 		let last = this.tail;
 		return last;
 	}
